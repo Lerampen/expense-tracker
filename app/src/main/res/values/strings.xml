@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Expense Tracker App</string>
+    <string name="welcome">Welcome</string>
+    <string name="go_to_sign_in">Go to Sign In</string>
 </resources>
