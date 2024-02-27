@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -21,6 +22,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -31,20 +33,35 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.expensetrackerapp.ui.theme.poppinsFontFamily
 
-@OptIn(ExperimentalMaterial3Api::class)
+
+
+
+
 @Composable
 fun SignUpScreen() {
     var name by remember {
         mutableStateOf("")
     }
+    // TODO: Test if this modular code works
+    val outlinedTextFieldColors = TextFieldDefaults.colors(
+        unfocusedContainerColor = Color.White,
+        focusedIndicatorColor = colorResource(id = R.color.lord_icon_green),
+        unfocusedIndicatorColor = colorResource(id = R.color.lord_icon_green),
+        cursorColor = colorResource(id = R.color.lord_icon_green),
+        focusedLabelColor = colorResource(id = R.color.lord_icon_green),
+
+//    errorColor = MyTheme.colors.error,
+    )
 
     Column (
         modifier = Modifier
@@ -56,7 +73,7 @@ fun SignUpScreen() {
         IconButton(
             onClick = { /*TODO*/ },
             ) {
-           Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Back button")
+           Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back button")
 
         }
         Text(
@@ -86,6 +103,8 @@ fun SignUpScreen() {
             )
 
         )
+
+
 
         var email by remember {
             mutableStateOf("")

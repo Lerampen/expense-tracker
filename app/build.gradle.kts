@@ -54,11 +54,13 @@ dependencies {
     //splash screen dependency
     implementation ("androidx.core:core-splashscreen:1.0.1")
 //    dependencies GOOGLE FONTS
-        implementation("androidx.compose.ui:ui-text-google-fonts:1.6.1")
+        implementation("androidx.compose.ui:ui-text-google-fonts:1.6.2")
 // dependencies for navigation
         implementation ("androidx.navigation:navigation-compose:2.7.7")
     // dependencies for material icons
-    implementation ("androidx.compose.material:material-icons-extended:1.6.1")
+    implementation ("androidx.compose.material:material-icons-extended:1.6.2")
+
+    implementation("androidx.compose.material:material:1.6.2")
 
 //    dependencies for loading an image
     implementation("io.coil-kt:coil-compose:2.5.0")
