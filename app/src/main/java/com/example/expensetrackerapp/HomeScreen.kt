@@ -1,5 +1,6 @@
 package com.example.expensetrackerapp
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -25,6 +26,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -52,7 +54,7 @@ fun HomeScreen() {
             .padding(16.dp)
     ) {
 
-        CustomTopAppBar()
+
         Spacer(modifier = Modifier.height(16.dp))
         CardComposable()
         Spacer(modifier = Modifier.height(16.dp))
@@ -164,7 +166,7 @@ fun CardPreview() {
 
 @Composable
 fun TransactionsComposable() {
-    Column(verticalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.padding(16.dp)){
+    Column(verticalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.padding(4.dp)){
         Row {
             Text(text = "Transactions", fontFamily = poppinsFontFamily, fontWeight = FontWeight.Bold, fontSize = 16.sp)
             Spacer(modifier = Modifier.weight(1f))
@@ -192,31 +194,62 @@ fun TransactionsComposable() {
                 .padding(8.dp),
             colors = CardDefaults.cardColors(
                 containerColor = Color.White,
-                contentColor = Color.Black) ){
-            Column(verticalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.padding(16.dp)) {
-                Row {
-                    Icon(imageVector = Icons.Outlined.ShoppingCart , modifier = Modifier.clip(RoundedCornerShape(8.dp)), contentDescription = "Shopping Cart Icon",)
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(text = "Shopping", fontFamily = poppinsFontFamily, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
-                    Spacer(modifier = Modifier.weight(1f))
-                    Text(text = "-$590", fontFamily = poppinsFontFamily, fontSize = 8.sp, color = Color.Red, modifier = Modifier.paddingFromBaseline(top = 16.dp ) )
+                contentColor = Color.Black)
+        ){
+            Column(verticalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.padding(4.dp)) {
+                Row (modifier = Modifier.padding(8.dp)){
+
+                    IconButton(
+                        onClick = { /*TODO*/ },
+                        modifier = Modifier.background(
+                            color =  colorResource(id = R.color.candy_floss ),
+                            shape = RoundedCornerShape(12.dp)
+                        )
+                    ) {
+                        Icon(imageVector = Icons.Outlined.ShoppingCart, contentDescription = "Shopping" )
+                    }
+                    Spacer(modifier = Modifier.width(8.dp))
+
+                    Column(modifier = Modifier.weight(1f)) {
+
+                        Row{
+                            Text(
+                                text = "Shopping",
+                                fontFamily = poppinsFontFamily,
+                                fontWeight = FontWeight.SemiBold,
+//
+                            )
+                            Spacer(modifier = Modifier.weight(1f))
+                            Text(
+                                text = "-$590",
+                                fontFamily = poppinsFontFamily,
+//                                fontSize = 8.sp,
+                                color = Color.Red,
+                                modifier = Modifier.paddingFromBaseline(top = 16.dp)
+                            )
+                        }
+                        Row {
+
+                            Text(text = "Puma Store", fontFamily = poppinsFontFamily, fontSize = 8.sp, modifier = Modifier.paddingFromBaseline(top = 12.dp ))
+                            Spacer(modifier = Modifier.weight(1f))
+                            Text(text = "Cash", fontFamily = poppinsFontFamily, fontSize = 8.sp, color = Color.LightGray, modifier = Modifier.paddingFromBaseline(top = 12.dp ) )
+                        }
+                    }
+//                    Text(text = "Shopping", fontFamily = poppinsFontFamily, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
+//                    Spacer(modifier = Modifier.weight(1f))
+//                    Text(text = "-$590", fontFamily = poppinsFontFamily, fontSize = 8.sp, color = Color.Red, modifier = Modifier.paddingFromBaseline(top = 16.dp ) )
 
 
 
                 }
-                Row {
-                    Spacer(modifier = Modifier.width(28.dp))
-                    Text(text = "Puma Store", fontFamily = poppinsFontFamily, fontSize = 8.sp, modifier = Modifier.paddingFromBaseline(top = 12.dp ))
-                    Spacer(modifier = Modifier.weight(1f))
-                    Text(text = "Cash", fontFamily = poppinsFontFamily, fontSize = 8.sp, color = Color.LightGray, modifier = Modifier.paddingFromBaseline(top = 12.dp ) )
-                }
+
             }
 
         }
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, apiLevel = 33)
 @Composable
 fun TransactionPreview() {
     ExpenseTrackerAppTheme {

@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   BottomNavigationBar()
+                   OnBoardingTest()
 
                 }
             }
@@ -44,12 +44,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Navigation(navController : NavHostController = rememberNavController()) {
-    NavHost(navController = navController , startDestination = Screens.OnBoarding.route ){
-
-       composable(Screens.OnBoarding.route){
-           OnBoardingScreen()
-        }
-    }
-}

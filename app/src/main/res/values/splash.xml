@@ -2,7 +2,7 @@
 
 <resources>
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/simply_blue</item>
+        <item name="windowSplashScreenBackground">@color/lord_icon_green</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/budget</item>
         <item name="postSplashScreenTheme">@style/Theme.ExpenseTrackerApp</item>
     </style>

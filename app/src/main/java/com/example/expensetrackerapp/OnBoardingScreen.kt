@@ -1,5 +1,6 @@
 package com.example.expensetrackerapp
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -67,6 +68,7 @@ fun OnBoardingScreen() {
             }
 
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
+
                 Button(
                     onClick = { /*TODO*/ },
                     modifier = Modifier
@@ -80,12 +82,15 @@ fun OnBoardingScreen() {
                 ) {
                     Text(text = stringResource(R.string.go_to_sign_in) )
                 }
+
                 OutlinedButton(
                     onClick = { /*TODO*/ },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
-                        .padding(4.dp)
+                        .padding(4.dp),
+                    border = BorderStroke(width = 1.dp, color = colorResource(id = R.color.green_hue)
+                    )
 
                     ) {
                     Text(
@@ -99,7 +104,7 @@ fun OnBoardingScreen() {
 
 }
 
-@Preview(showBackground = true, device = Devices.PIXEL)
+@Preview(showBackground = true, device = Devices.PIXEL, apiLevel = 33)
 @Composable
 fun OnBoardingPreview() {
     ExpenseTrackerAppTheme{

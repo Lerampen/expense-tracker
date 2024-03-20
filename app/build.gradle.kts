@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.expensetrackerapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -61,11 +61,16 @@ dependencies {
     implementation ("androidx.compose.material:material-icons-extended:1.6.2")
 
     implementation("androidx.compose.material:material:1.6.2")
+    // For `compose`. Creates a `ChartStyle` based on an M3 Material Theme.
+    implementation("com.patrykandpatrick.vico:compose-m3:2.0.0-alpha.9")
 
 //    dependencies for loading an image
     implementation("io.coil-kt:coil-compose:2.5.0")
     //dependencies for the dotsIndicator
     implementation("com.tbuonomo:dotsindicator:5.0")
+
+//    dependecies for ycharts
+    implementation ("co.yml:ycharts:2.1.0")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
